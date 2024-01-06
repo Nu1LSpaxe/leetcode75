@@ -34,6 +34,29 @@ Way 2: Recursion
         if str1 < str2: gcdOfStrings(str1, str2[len(str1):])
 """
 
+### Complexity ###
+"""
+Way 1
+Time complexity:
+    - O(N) to concatenate strings
+    - O(log(min(M, N))) to calculate GCD
+    That is O(N + log(min(M, N)))
+
+Space complexity:
+    O(M + N) to store concatenated string
+
+Way 2
+Time complexity:
+    - O(N) to slice string in each recursion, where N is length of longer string
+    - O(log(N)) is depth of recursion
+    That is O(Nlog(N))
+
+Space complexity:
+    - O(M + N) to store concatenated string
+    - O(log(N)) for recursion stack space
+    That is O(M + N + log(N))
+"""
+
 ### Implementation ###
 
 # import math
