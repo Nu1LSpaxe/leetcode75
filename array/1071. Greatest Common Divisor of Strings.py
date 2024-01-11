@@ -14,7 +14,7 @@ Constraints:
 """
 The return must can devide both string, which means it is factor of both string -> range of result: 0("") <= return x <= min(str1.length, str2.length)
 
-# GCD: find biggest factor of two numbers -> utilize the package (language) provided, or you can make it by pure hands
+# GCD: find greatest factor of two numbers -> utilize the package (language) provided, or you can make it by pure hands
 # note: Set is unordered
 
 
@@ -59,26 +59,20 @@ Space complexity:
 
 ### Implementation ###
 
-# import math
-def gcdOfStrings(str1, str2):
-    """
-    :type str1: str
-    :type str2: str
-    :rtype: str
-    """
-    if str1 + str2 != str2 + str1: return ""
-    if str1 == str2: return str1
-    if str1 > str2: return gcdOfStrings(str1[len(str2):], str2)
-    # if str1 < str2
-    return gcdOfStrings(str1, str2[len(str1):])
+def gcdOfStrings(s1: str, s2: str) -> str:
+    if s1 + s2 != s2 + s1: return ''
+    if s1 == s2: return s1
+    if len(s1) > len(s2): return gcdOfStrings(s2, s1[len(s2):])
+    # if len(s2) > len(s1)
+    return gcdOfStrings(s1, s2[len(s1):])
 
 
-### Test Function ###
+### Test ###
+
 def testGcdOfStrings(str1, str2, want):
     result = gcdOfStrings(str1, str2)
 
     return "pass" if result == want else f"want {want}, got {result}"
-
 
 # testcases
 print(testGcdOfStrings("ABCABC", "ABC", "ABC"))

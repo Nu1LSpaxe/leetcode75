@@ -21,6 +21,7 @@ while any not empty:
 """
 
 ### Complexity ###
+
 """
 Time complexity
     A for loop -> O(n), n is max(len(word1), len(word2))
@@ -52,8 +53,7 @@ def mergeAlternately(word1, word2):
     
     return result
 
-### Test Function ###
-
+### Test ###
 def testMergeAlternately(word1, word2, want):
 
     result = mergeAlternately(word1=word1, word2=word2)
