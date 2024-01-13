@@ -47,6 +47,12 @@ each ping():
 """
 
 ### Complexity ###
+"""
+Time complexity:
+    - deque.append() and popleft() is O(1)
+    - while loop is O(n)
+"""
+
 ### Implementation ###
 from collections import deque
 
