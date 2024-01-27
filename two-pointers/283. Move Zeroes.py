@@ -83,7 +83,7 @@ def moveZeroes(nums):
 
 
 ### Test ###
-def testMoveZeroes(nums, want):
+def testMoveZeroes(nums, want) -> str:
     result = moveZeroes(nums)
 
     return "pass" if result == want else f"want {want}, got {result}"
